@@ -1,0 +1,51 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@model PersonModel
+
+<style>
+    .validation-summary-valid {
+        display: none;
+    }
+</style>
+
+<form method="post">
+
+    <div asp-validation-summary="All" class="alert alert-danger mb-3">
+        <strong>@Localizer["Following errors have occured:"]</strong>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="FirstName" class="form-label">
+            @Localizer["FirstName"]*:
+        </label>
+        <input asp-for="FirstName" type="text" class="form-control">
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="LastName" class="form-label">
+            @Localizer["LastName"]*:
+        </label>
+        <input asp-for="LastName" type="text" class="form-control">
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Age" class="form-label">
+            @Localizer["Age"]*:
+        </label>
+        <input asp-for="Age" type="text" class="form-control">
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="EmailAddress" class="form-label">
+            @Localizer["EmailAddress"]:
+        </label>
+        <input asp-for="EmailAddress" type="text" class="form-control">
+        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">@Localizer["Submit"]</button>
+
+</form>
