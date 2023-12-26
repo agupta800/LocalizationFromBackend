@@ -30,9 +30,10 @@ namespace LocalizationDemo.Controllers
             return View();
         }
         // UpdatePerson action on HomeController:
-        [HttpGet]
+        
         public IActionResult UpdatePerson(PersonModel model)
         {
+
             return View(model);
         }
 

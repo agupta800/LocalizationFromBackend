@@ -4,7 +4,7 @@ namespace LocalizationDemo.Models
 {
     public class PersonModel
     {
-        [Display(Name = "First Name")]
+        //[Display(Name = "First Name")]
         [Required]
         public string? FirstName { get; set; }
 
